@@ -23,20 +23,16 @@ else
     xterm -fullscreen -e asciiquarium &
 fi
 
-# Backup kb layout
-LAYOUTS=$(setxkbmap -query | grep layout | cut -d' ' -f6)
+# Store the current layout and set the default one
 if [ $(command -v xkblayout-state) ]; then
     CURRENT=$(xkblayout-state print %c)
+    xkblayout-state set 0
 fi
-
-#Set US layout
-setxkbmap us
 
 #Lock screen and kill all the child processes on unlock
 xtrlock && pkill -P $$
 
 #Restore kb layout
-setxkbmap $LAYOUTS
 if [ $(command -v xkblayout-state) ]; then
     xkblayout-state set $CURRENT
 fi
