@@ -30,7 +30,7 @@ if [ $(command -v xkblayout-state) ]; then
 fi
 
 #Lock screen and kill all the child processes on unlock
-xtrlock && pkill -P $$
+pyxtrlock && pkill -P $$
 
 #Restore kb layout
 if [ $(command -v xkblayout-state) ]; then
