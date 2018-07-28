@@ -8,8 +8,8 @@ if [ ! $(command -v xfce4-terminal) ]; then
     echo "\"command not found: \"xfce4-terminal\"" >&2
     exit 1
 fi
-if [ ! $(command -v xtrlock) ]; then
-    echo "\"command not found: \"xtrlock\"" >&2
+if [ ! $(command -v pyxtrlock) ]; then
+    echo "\"command not found: \"pyxtrlock\"" >&2
     exit 1
 fi
 
